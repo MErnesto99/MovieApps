@@ -1,6 +1,9 @@
 package com.example.movieapps.Utils
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -15,7 +18,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun AppBar(title:String,icon:ImageVector,iconClicked:() -> Unit){
-    TopAppBar(title = { Text(text = title) },
+    TopAppBar(title = { Text(text = title,Modifier.padding(start=5.dp)) },
         backgroundColor = Color.Yellow,
         elevation = 5.dp,
     navigationIcon = {
@@ -23,8 +26,21 @@ fun AppBar(title:String,icon:ImageVector,iconClicked:() -> Unit){
             Icon(imageVector = icon, contentDescription = "",
                 modifier = Modifier
                     .padding(10.dp)
-                    .clickable (onClick = { iconClicked.invoke() }))
+                    .clickable(onClick = { iconClicked.invoke() }))
         }
     })
 
+}
+
+@Composable
+fun AppBar1(title: String,icon: ImageVector,iconClicked: () -> Unit){
+    
+    TopAppBar(backgroundColor = Color.Yellow.copy(1f)) {
+        IconButton(onClick = {iconClicked.invoke() }) {
+            Icon(imageVector = icon, contentDescription ="")
+        }
+        Row(modifier = Modifier.padding(0.dp).fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+            Text(text = title)
+        }
+    }
 }
