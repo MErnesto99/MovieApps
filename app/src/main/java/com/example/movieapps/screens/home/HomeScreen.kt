@@ -40,14 +40,14 @@ fun MainContent(
     "John Wick",
     "Die Heart",
     "The Pops Exorcist",
-    "Stimulant")){
+    "Simulant")){
     Surface(color = MaterialTheme.colors.background) {
         Column(modifier = Modifier.padding(12.dp)) {
             LazyColumn(){
                 items(items=movieList){
                     MovieRow(movie = it){movie ->
                        //NavController allows us to click and go somewhere else
-                        navController.navigate(route = MovieScreens.DetailsScreen.name)
+                        navController.navigate(route = MovieScreens.DetailsScreen.name+"/$movie")
                     }
                 }
 
@@ -76,7 +76,9 @@ fun MovieRow(movie:String,onItemClick: (String)-> Unit={}){
                 Icon(imageVector = Icons.Default.AccountBox, contentDescription = "movie image")
             }
 
-            Text(text = movie)
+            Column() {
+                Text(text = movie)
+            }
 
         }
     }
