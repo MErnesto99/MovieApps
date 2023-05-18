@@ -1,4 +1,4 @@
-package com.example.movieapps.widgets
+package com.example.moviesapp.widgets
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
@@ -26,8 +26,8 @@ import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
 import coil.transform.CircleCropTransformation
-import com.example.movieapps.model.Movie
-import com.example.movieapps.model.getMovies
+import com.example.moviesapp.model.Movie
+import com.example.moviesapp.model.getMovies
 
 @Preview
 @Composable

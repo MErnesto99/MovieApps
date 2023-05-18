@@ -1,6 +1,4 @@
-package com.example.movieapps.model
-
-import androidx.compose.ui.graphics.vector.ImageVector
+package com.example.moviesapp.model
 
 data class Movie(val id:String,
                 val title:String,

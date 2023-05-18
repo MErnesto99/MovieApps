@@ -1,4 +1,4 @@
-package com.example.movieapps.Utils
+package com.example.moviesapp.Utils
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

@@ -1,4 +1,4 @@
-package com.example.movieapps.screens.Details
+package com.example.moviesapp.screens.Details
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -9,25 +9,16 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
-import coil.transform.CircleCropTransformation
-import com.example.movieapps.Utils.AppBar
-import com.example.movieapps.Utils.AppBar1
-import com.example.movieapps.model.Movie
-import com.example.movieapps.model.getMovies
-import com.example.movieapps.widgets.MovieRow
+import com.example.moviesapp.Utils.AppBar1
+import com.example.moviesapp.model.getMovies
+import com.example.moviesapp.widgets.MovieRow
 
 
 //@Preview

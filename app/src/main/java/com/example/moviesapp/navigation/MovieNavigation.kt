@@ -1,4 +1,4 @@
-package com.example.movieapps.navigation
+package com.example.moviesapp.navigation
 
 import android.util.Log
 import androidx.compose.runtime.Composable
@@ -7,8 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.movieapps.screens.Details.DetailsScreen
-import com.example.movieapps.screens.home.HomeScreen
+import com.example.moviesapp.screens.Details.DetailsScreen
+import com.example.moviesapp.screens.home.HomeScreen
 
 @Composable
 fun MovieNavigation() {
