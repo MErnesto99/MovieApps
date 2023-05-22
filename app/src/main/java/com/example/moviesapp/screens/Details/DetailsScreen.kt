@@ -55,7 +55,7 @@ fun MainContent(navController: NavController, movieId: String?) {
             Divider()
             Text(text = "Movie Images")
             LazyRow() {
-
+            ///// LazyRow
                 items(newMovieList.first().images) { image ->
                     Card(
                         modifier = Modifier
