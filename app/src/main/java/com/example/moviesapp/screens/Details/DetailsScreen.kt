@@ -49,12 +49,13 @@ fun MainContent(navController: NavController, movieId: String?) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         ) {
-
+            //  .first metgod gets the
             MovieRow(newMovieList.first())
             Spacer(modifier = Modifier.height(8.dp))
             Divider()
             Text(text = "Movie Images")
             LazyRow() {
+
                 items(newMovieList.first().images) { image ->
                     Card(
                         modifier = Modifier
