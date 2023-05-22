@@ -45,6 +45,8 @@ fun MainContent(navController: NavController, movieId: String?) {
             .fillMaxSize()
     ) {
         Column(
+
+
             modifier = Modifier.padding(5.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
