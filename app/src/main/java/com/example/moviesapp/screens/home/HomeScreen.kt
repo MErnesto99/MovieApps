@@ -19,10 +19,12 @@ import com.example.moviesapp.widgets.MovieRow
 
 @Composable
 fun HomeScreen(navController: NavController){
+
     Scaffold(topBar = { AppBar(title = "Movies",Icons.Default.Home){
 
     } }) {
         MainContent(navController=navController)
+
     }
 }
 
