@@ -27,17 +27,15 @@ import coil.request.ImageRequest
 import coil.size.Size
 import coil.transform.CircleCropTransformation
 import com.example.moviesapp.model.Movie
-import com.example.moviesapp.model.getMovies
 
-@Preview
+//@Preview
 @Composable
-fun MovieRow(movie: Movie = getMovies()[0], onItemClick: (String) -> Unit = {}) {
+fun MovieRow(movie: Movie, onItemClick: (String) -> Unit = {}) {
     var expanded by remember { mutableStateOf(false) }
 
 
     Card(modifier = Modifier
         .fillMaxWidth()
-//        .height(130.dp)
         .clickable {
             onItemClick(movie.id)
         }

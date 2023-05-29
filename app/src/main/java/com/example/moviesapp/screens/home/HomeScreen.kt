@@ -13,16 +13,15 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.moviesapp.Utils.AppBar
 import com.example.moviesapp.model.Movie
-import com.example.moviesapp.model.getMovies
 import com.example.moviesapp.navigation.MovieScreens
 import com.example.moviesapp.widgets.MovieRow
 
 @Composable
-fun HomeScreen(navController: NavController){
+fun HomeScreen(navController: NavController, movieList:List<Movie>){
     Scaffold(topBar = { AppBar(title = "Movies",Icons.Default.Home){
 
     } }) {
-        MainContent(navController=navController)
+        MainContent(navController=navController,movieList)
     }
 }
 
@@ -30,12 +29,12 @@ fun HomeScreen(navController: NavController){
 @Composable
 fun MainContent(
     navController: NavController,
-    movieList:List<Movie> = getMovies()){
+    movieList:List<Movie>){
     Surface(color = MaterialTheme.colors.background) {
         Column(modifier = Modifier.padding(12.dp)) {
             LazyColumn(){
                 items(items=movieList){
-                    MovieRow(movie = it){movie ->
+                    MovieRow(movie = it){movie->
                        //NavController allows us to click and go somewhere else
                         navController.navigate(route = MovieScreens.DetailsScreen.name+"/$movie")
                     }

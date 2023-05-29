@@ -17,26 +17,26 @@ import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
 import com.example.moviesapp.Utils.AppBar1
-import com.example.moviesapp.model.getMovies
+import com.example.moviesapp.model.Movie
 import com.example.moviesapp.widgets.MovieRow
 
 
 //@Preview
 @Composable
-fun DetailsScreen(navController: NavController, movieData: String?) {
+fun DetailsScreen(navController: NavController, movieData: String?,mList:List<Movie>) {
     Scaffold(topBar = {
         AppBar1(title = "Details Screen", Icons.Default.ArrowBack) {
             navController.popBackStack()
         }
     }) {
 
-        MainContent(navController = navController, movieData)
+        MainContent(navController = navController, movieData,mList)
     }
 }
 
 @Composable
-fun MainContent(navController: NavController, movieId: String?) {
-    val newMovieList = getMovies().filter { movie ->
+fun MainContent(navController: NavController, movieId: String?,mList:List<Movie>) {
+    val newMovieList = mList.filter { movie ->
         movie.id == movieId
     } //This will return a movie when the condition matches.
     Surface(

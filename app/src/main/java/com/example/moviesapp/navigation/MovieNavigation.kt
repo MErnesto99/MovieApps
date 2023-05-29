@@ -7,11 +7,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.moviesapp.model.Movie
 import com.example.moviesapp.screens.Details.DetailsScreen
 import com.example.moviesapp.screens.home.HomeScreen
 
 @Composable
-fun MovieNavigation() {
+fun MovieNavigation(mList:List<Movie>) {
 
     val navController = rememberNavController()
     NavHost(
@@ -20,7 +21,7 @@ fun MovieNavigation() {
     ) {
         composable(MovieScreens.HomeScreen.name) {
             //Here we pass where this should lead us
-            HomeScreen(navController = navController)
+            HomeScreen(navController = navController,mList)
             Log.d("Nav", "MovieNavigation: ${MovieScreens.HomeScreen.name}")
         }
         composable(MovieScreens.DetailsScreen.name + "/{arg}",
@@ -28,7 +29,7 @@ fun MovieNavigation() {
         ) { backStackEntry ->
             DetailsScreen(
                 navController = navController,
-                backStackEntry.arguments?.getString("arg")
+                backStackEntry.arguments?.getString("arg"),mList
             )
         }
     }
