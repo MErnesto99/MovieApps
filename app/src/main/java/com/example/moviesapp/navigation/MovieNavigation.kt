@@ -10,6 +10,7 @@ import androidx.navigation.navArgument
 import com.example.moviesapp.model.Movie
 import com.example.moviesapp.screens.Details.DetailsScreen
 import com.example.moviesapp.screens.home.HomeScreen
+import com.example.moviesapp.screens.imageViewer.ImageViewScreen
 
 @Composable
 fun MovieNavigation(mList:List<Movie>) {
@@ -31,6 +32,17 @@ fun MovieNavigation(mList:List<Movie>) {
                 navController = navController,
                 backStackEntry.arguments?.getString("arg"),mList
             )
+        }
+
+        composable(MovieScreens.ImageViewerScreen.name+"/{arg}",
+            arguments = listOf(navArgument(name="arg"){
+                type= NavType.StringType
+            })
+        ){navBackStackEntry ->
+            ImageViewScreen(
+                navController = navController,
+                mList = mList,
+                movieId = navBackStackEntry.arguments?.getString("arg"))
         }
     }
 
