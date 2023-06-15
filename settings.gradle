@@ -11,6 +11,8 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+
+
 }
 rootProject.name = "MovieApps"
 include ':app'
